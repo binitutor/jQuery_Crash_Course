@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BiniTutor | jQuery Crash Course</title>
+	<title>BiniTutor | Events</title>
 	<script src="./assets/js/jquery-3.5.1.min.js"></script>
 	<style type="text/css">
 		body {
@@ -23,18 +23,257 @@
 			margin: auto;
 			padding: 10px;
 		}
+		#spacer {
+			height: 200px;
+		}
 	</style>
+
+	<script>
+		$(document).ready(function(){
+			// $('#btn1').click(function(){
+			// 	alert('button 1 clicked!');
+			// })
+
+			// the click event
+			// $('#btn1').on('click', function(){
+			// 	alert('button 1 clicked!');
+			// });
+
+			// button 1 hides
+			// $('#btn1').click(function(){
+			// 	$('#para1').hide();
+			// });
+
+			// button 2 shows
+			// $('#btn2').click(function(){
+			// 	$('#para1').show();
+			// });
+
+			// click one button for both hide and show
+			// $('#btn1').click(function(){
+			// 	$('#para1').toggle();
+			// });
+
+			// double click event
+			// $('#btn1').dblclick(function(){
+			// 	$('#para1').toggle();
+			// });
+
+			// hover event
+			// $('#btn1').hover(function(){
+			// 	$('#para1').toggle();
+			// });
+
+			// mouse enter
+			// $('#btn1').on('mouseenter', function(){
+			// 	$('#para1').toggle();
+			// });
+
+			// mouse leave
+			// $('#btn1').on('mouseleave', function(){
+			// 	$('#para1').toggle();
+			// });
+
+			// mouse move
+			// $('#btn1').on('mousemove', function(){
+			// 	$('#para1').toggle();
+			// });
+
+			// mousedown event
+			// $('#btn1').on('mousedown', function(){
+			// 	$('#para1').toggle();
+			// });
+
+			// mouseup event
+			// $('#btn1').on('mouseup', function(){
+			// 	$('#para1').toggle();
+			// });
+
+			// click event passed info
+			// $('#btn1').click(function(e){
+			// 	console.log(e);
+			// })
+
+			// click event passed info
+			// $('#btn1').click(function(e){
+			// 	alert(e.currentTarget.id);
+			// })
+
+			// return the inner html (title)
+			// $('#btn1').click(function(e){
+			// 	alert(e.currentTarget.innerHTML);
+			// })
+
+			// return the outer html (tags, id, title)
+			// $('#btn1').click(function(e){
+			// 	alert(e.currentTarget.outerHTML);
+			// })
+
+			// return class name
+			// $('#btn1').click(function(e){
+			// 	alert(e.currentTarget.className);
+			// })
+
+			// return the coordinates
+			// $('*').on('mousemove', function(e){
+			// 	console.log('Y-coordinate: ' + e.clientY + ' X-coordinate: ' + e.clientX);
+			// })
+			// or
+			// return the coordinates
+			// $(document).on('mousemove', function(e){
+			// 	console.log('Y-coordinate: ' + e.clientY + ' X-coordinate: ' + e.clientX);
+			// })
+
+			// return the coordinates to the page continuously
+			// $('*').on('mousemove', function(e){
+			// 	$('#coords').append('Y-coordinate: ' + e.clientY + ' X-coordinate: ' + e.clientX);
+			// })
+
+			// return the coordinates to the page on one spot
+			// $('*').on('mousemove', function(e){
+			// 	$('#coords').html('Y-coordinate: ' + e.clientY + ' X-coordinate: ' + e.clientX);
+			// })
+
+			// form focus event
+			// $('input').focus(function(){
+			// 	alert('Input box selected!');
+			// })
+
+			// increasing the width of input on click
+			// $('input').focus(function(){
+			// 	$('input#name').css('width', '200px');
+			// })
+
+			// using this to apply styling for each input
+			// $('input').focus(function(){
+			// 	$(this).css('background', 'green');
+			// })
+
+			// using this to apply styling for each input
+			// $('input').blur(function(){
+			// 	$(this).css('background', 'pink');
+			// })
+
+			// output what is being typed inside the form
+			// $('input').keyup(function(e){
+			// 	$('#output').html(e.target.value);
+			// })
+
+			// output what is selected inside the form
+			// $('select#gender').change(function(e){
+			// 	$('#output').html(e.target.value);
+			// })
+
+			// submit event sending value to console
+			// $('#form').submit(function(e){
+			// 	e.preventDefault(); // prevents it from submitting the data
+			// 	var name = $('input#name').val();
+			// 	var email = $('input#email').val();
+			// 	var gender = $('select#gender').val();
+			// 	console.log('Name: ' + name + ' Email: ' + email + ' Gender: ' + gender);
+			// })
+
+			// advanced form submit event 
+			$('#form').submit(function(e){
+				e.preventDefault(); // prevents it from submitting the data
+				var id = $('select#id').val();
+				var name = $('input#name').val();
+				var email = $('input#email').val();
+				var gender = $('select#gender').val();
+				var radChoice = $('input[name="choices"]:checked').val();
+				var comment = $('textarea#comments').val();
+				
+				if( ($('#agreement').is(':checked')) && 
+					($('input[name="agreement"]:checked').val() === 'agreed') 
+				)
+				{
+					var agreement = $('input[name="agreement"]:checked').val();
+				} else {
+					var agreement = 'Not agreed';
+				}
+				
+				console.log('ID: ' + id + ', Name: ' + name + ', Email: ' + email + ', Gender: ' 
+					+ gender + ', Decision: ' + radChoice + ', Comment: ' + comment 
+					+ ', Agreement: ' + agreement);
+			})
+
+
+		});
+	</script>
 </head>
 <body>
 	<header>
-		<h1>jQuery Crash Course</h1>
+		<h1>jQuery Crash Course | Events</h1>
 	</header>
 	<div id="container">
+		<h3>Mouse Events</h3>
+		<button id="btn1" class="btn1">Button 1</button>
+		<button id="btn2">Button 2</button>
+
+		<p id="para1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus felis ligula, eleifend in velit non, <span>consectetur lobortis ipsum.</span> Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tincidunt eros nec erat scelerisque maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisi dui. Praesent efficitur rutrum ipsum, eu tincidunt nibh. Nam dignissim massa et iaculis porttitor.</p>
+
+		<div id="coords"></div>
+
+		<div id="spacer">
+		<hr>
+
+		<form id="form">
+			<label>Student ID</label><br>
+			<select id="id" name="id">
+				<option>Select your ID:</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			<br>
+
+			<label>Name</label><br>
+			<input type="text" id="name" name="name">
+			<br>
+			<label>Email</label><br>
+			<input type="email" id="email" name="email">
+			<br>
+			<label>Gender</label><br>
+			<select id="gender" name="gender">
+				<option>Select a choice</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+			<br>
+			
+			<input type="radio" id="accept" name="choices" class="choices" value="accept" checked>
+			<label for="accept">Accept</label>
+			<br>
+			<input type="radio" id="refuse" name="choices" value="reject">
+			<label for="reject">Reject</label>
+			<br>
+
+			<textarea type="text" id="comments"></textarea>
+			<br>
+			<input type="checkbox" id="agreement" name="agreement" value="agreed" checked>
+			<label for="agreement">Agreed to terms of service</label>
+			<br>
+			<br>
+			<input type="submit" value="submit">
+			<br>
+		</form>
+
+		<div id="output"></div>
+
+		<div id="spacer"></div><div id="spacer"></div><div id="spacer"></div>
 		
 	</div>
-
-	<script>
-		// this is where custom jquery goes
-	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
