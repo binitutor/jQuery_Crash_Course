@@ -23,6 +23,9 @@
 			margin: auto;
 			padding: 10px;
 		}
+		#spacer {
+			height: 200px;
+		}
 	</style>
 </head>
 <body>
@@ -30,11 +33,67 @@
 		<h1>jQuery Crash Course</h1>
 	</header>
 	<div id="container">
+		<h1 id="heading1">Heading One</h1>
+		<p id="para1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus felis ligula, eleifend in velit non, <span>consectetur lobortis ipsum.</span> Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tincidunt eros nec erat scelerisque maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisi dui. Praesent efficitur rutrum ipsum, eu tincidunt nibh. Nam dignissim massa et iaculis porttitor.</p>
+
+		<h1 class="heading2">Heading Two</h1>
+		<p class="para2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus felis ligula, eleifend in velit non, <span>consectetur lobortis ipsum.</span> Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tincidunt eros nec erat scelerisque maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisi dui. Praesent efficitur rutrum ipsum, eu tincidunt nibh. Nam dignissim massa et iaculis porttitor.</p>
+
+		<ul id="list">
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+			<li>List item 4</li>
+			<li>List item 5</li>
+			<li>List item 6</li>
+		</ul>
+
+		<div id="spacer"></div>
+
+
+		<input type="text">
+		<input type="button" value="Button 1">
+		<input type="submit" value="Button 2">
+
+
+		<div id="spacer"></div>
+
+
+		<a href="http://binitutor.com">BiniTutor</a>
+		<a href="http://blog.binitutor.com">BiniTutor Blog</a>
+		<a href="http://portfolio.binitutor.com">BiniTutor Portfolio</a>
+
+
+		<div id="spacer"></div><div id="spacer"></div><div id="spacer"></div>
 		
 	</div>
 
 	<script>
 		// this is where custom jquery goes
+		// $('h1#heading1').hide(); // to hide all headings
+		// $('h1#heading1').hide(); // to hide only heading1
+		// $('h1.heading2').hide(); // to hide only heading2
+		$('p span').css('color', 'red'); // changes colors of inner element
+		$('ul#list li:first').css('color', 'red'); // first item on list
+		$('ul#list li:last').css('color', 'green'); // last item on list
+		$('ul#list li:even').css('background', 'yellow'); // even number item on list
+		$('ul#list li:odd').css('background', '#ccc'); // odd number item on list
+		$('ul#list li:nth-child(3n)').css('list-style', 'none'); // nth child
+		$(':button').hide(); // using type as a selector
+		$('[href]').css('color', 'red'); // attribute as a selector
+		$('[href="http://binitutor.com"]').css('background', '#ccc'); // attribute value as a selector
+		// $('*').hide();
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
