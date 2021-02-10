@@ -23,18 +23,167 @@
 			margin: auto;
 			padding: 10px;
 		}
+		#spacer {
+			height: 200px;
+		}
+		.myClass {
+			color: blue;
+			background: black;
+		}
 	</style>
+
+	<script>
+		$(document).ready(function(){
+			// this is where custom jquery goes
+
+			// adding multiple stylings
+			// $('p.para1').css({color: 'red', background: '#ccc'});
+
+			// remove class name
+			// $('p.para2').addClass('myClass');
+			// remove class name
+			// $('p.para2').removeClass('myClass');
+
+			// toggle add/remove class with button
+			// $('#btn1').click(function(){
+			// 	$('p.para2').toggleClass('myClass');
+			// })
+
+			// add text content
+			// $('#myDiv').text('Hello Bini');
+
+			// add text content with html tags
+			// $('#myDiv').html('<h3>Hello Bini</h3>');
+
+			// getting text content
+			// $('#myDiv').text('Hello Bini');
+			// alert( $('#myDiv').text() );
+
+			// append -  adding list item to the end
+			//$('ul').append('<li>Append List Item</li>')
+			// prepend - adding list item to the begining
+			// $('ul').prepend('<li>Prepend List Item</li>');
+
+			// appendTo - adding el to the end of el
+			// $('.para1').appendTo('ul');
+
+			// appendTo - adding el at the beginning of el
+			//$('.para1').prependTo('ul');
+
+			// before
+			// $('ul').before('<h3>Hi Bini</h3>');
+
+			// after
+			// $('ul').after('<h3>Bye Bini</h3>');
+
+			// empty
+			// $('ul').empty();
+
+			// detach
+			// $('ul').detach();
+
+			// add attribute
+			// $('a').attr('target', '_blank');
+			// get attribute value
+			//alert( $('a').attr('href') );
+
+			// remove attribute
+			// $('a').removeAttr('href');
+
+			// wrap elements
+			// $('p').wrap('<h1>');
+
+			// wrap all -- all wrapped in one h1
+			// $('p').wrapAll('<h1>');
+
+			// update ul with input
+			// $('#newItem').keyup(function(e){
+			// 	var code = e.which; // gets the key code
+			// 	if(code == 13) { // if the key is 'enter key'
+			// 		e.preventDefault(); //prevent default behavior
+			// 		$('ul').append('<li>' + e.target.value + '</li>');
+			// 	}
+			// })
+			
+			// array
+			// var myArr = ['Bini ', 'H ', 'Alemayehu'];
+
+			// $.each(myArr, function(index, val){
+			// 	$('#myId').append(val);
+			// });
+
+			// appending list items from array
+			// var myArr = ['Bread', 'Enjera', 'Buna'];
+
+			// $.each(myArr, function(index, val){
+			// 	$('#myId').append('<li>'+val+'</li>');
+			// });
+
+			// Saving ul li list items to array
+			// var newArr = $('ul#list li').toArray(); // gets all list items & metadata
+			// $.each(newArr, function(i, val) {
+			// 	console.log(val.innerHTML);
+			// });
+			
+
+		});
+	</script>
 </head>
 <body>
 	<header>
 		<h1>jQuery Crash Course</h1>
 	</header>
 	<div id="container">
+		<button id="btn1">Button 1</button>
+		<p class="para1">This is a paragraph</p>
+		<p class="para2">This is another paragraph</p>
+		<div id="myDiv"></div>
+
+		<div id="spacer">
+
+		<input type="text" id="newItem">
+		<ul id="list">
+			<li>List Item 1</li>
+			<li>List Item 2</li>
+			<li>List Item 3</li>
+			<li>List Item 4</li>
+		</ul>
+
+		<hr>
+
+		<a href="http://blog.binitutor.com">BiniTutor</a>
+
+		<hr>
+
+		<div id="myId"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div id="spacer"></div><div id="spacer"></div><div id="spacer"></div>
 		
 	</div>
-
-	<script>
-		// this is where custom jquery goes
-	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
