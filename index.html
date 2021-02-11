@@ -23,18 +23,192 @@
 			margin: auto;
 			padding: 10px;
 		}
+		#spacer {
+			height: 200px;
+		}
+
+		#box {
+			background: #333;
+			height: 100px;
+			width: 80%;
+			color: #fff;
+			padding: 40px;
+			text-align: center;
+		}
+
+		#box2 {
+			background: red;
+			width: 100px;
+			height: 100px;
+			position: relative;
+		}
 	</style>
+	<script>
+		$(document).ready(function(){
+			// this is where custom jquery goes
+
+			// fadeout animation
+			// $('#btnFadeOut').click(function(){
+			// 	$('#box').fadeOut();
+			// });
+
+			// fadeout animation fast
+			// $('#btnFadeOut').click(function(){
+			// 	$('#box').fadeOut('fast');
+			// });
+
+			// fadeout animation slow
+			// $('#btnFadeOut').click(function(){
+			// 	$('#box').fadeOut('slow');
+			// });
+
+			// fadeout animation in milliseconds
+			// $('#btnFadeOut').click(function(){
+			// 	$('#box').fadeOut(3000);
+			// });
+
+			// fadeout animation call back function
+			// $('#btnFadeOut').click(function(){
+			// 	$('#box').fadeOut(3000, function(){
+			// 		$('#btnFadeOut').text('It is gone!');
+			// 	});
+			// });
+
+			// fadein animation
+			// $('#btnFadeIn').click(function(){
+			// 	$('#box').fadeIn(3000, function(){
+			// 		$('#btnFadeIn').text('It reapears!');
+			// 	});
+			// });
+
+			// fade animation toggle
+			// $('#btnFadeToggle').click(function(){
+			// 	$('#box').fadeToggle(1000);
+			// });
+
+			// Slide up animation 
+			// $('#slider').click(function(){
+			// 	$('#box').slideUp();
+			// });
+
+			// Slide down animation 
+			// $('#slider').click(function(){
+			// 	$('#box').slideDown();
+			// });
+
+			// Slide up animation 
+			// $('#slider').click(function(){
+			// 	$('#box').slideToggle();
+			// });
+
+			// stop slider in the middle of the effect 
+			// $('#slider').click(function(){
+			// 	$('#box').slideToggle();
+			// });
+
+			// $('#stopper').click(function(){
+			// 	$('#box').stop();
+			// });
+
+			// move left
+			// $('#mover').click(function(){
+			// 	$('#box2').animate({
+			// 		left: 500, // adds css 500 px margin
+			// 		height: '200px',
+			// 		width: '200px',
+			// 		opacity: '0.5'
+			// 	});
+			// });
+
+			// move right
+			// $('#mover').click(function(){
+			// 	$('#box2').animate({
+			// 		left: 0, // adds css margin: 0 px
+			// 		height: '100px',
+			// 		width: '100px',
+			// 		opacity: '1'
+			// 	});
+			// });
+
+			// que - run multiple animations in once
+			$('#mover').click(function(){
+				var box = $('#box2');
+				box.animate({
+					left: 500,
+					height: '200px',
+					width: '200px',
+					opacity: '0.5',
+					color: '#333'
+				});
+
+				box.animate({
+					left: 500,
+					top: 500,
+					height: '300px',
+					width: '300px',
+					opacity: '0.6'
+				});
+
+				box.animate({
+					left: 0,
+					top: 500,
+					height: '400px',
+					width: '400px',
+					opacity: '0.8'
+				});
+
+				box.animate({
+					left: 0,
+					top: 0,
+					height: '100px',
+					width: '100px',
+					opacity: '1'
+				});
+			});
+
+
+			
+		});
+	</script>
 </head>
 <body>
 	<header>
-		<h1>jQuery Crash Course</h1>
+		<h1>jQuery Crash Course | Effects & Animate</h1>
 	</header>
 	<div id="container">
 		
-	</div>
+		<button id="btnFadeOut">Fade Out</button>
+		<button id="btnFadeIn">Fade In</button>
+		<button id="btnFadeToggle">Fade Toggle</button>
 
-	<script>
-		// this is where custom jquery goes
-	</script>
+		<button id="slider">Slider</button>
+		<button id="stopper">Stop</button>
+
+
+		<hr>
+		<div id="box"><h1>Hello World</h1></div>
+		<div id="spacer">
+
+		<hr>
+		<button id="mover">Move</button>
+		<div id="box2"><h1>Hello World</h1></div>
+
+
+
+
+		<div id="spacer"></div><div id="spacer"></div><div id="spacer"></div>
+		
+	</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
